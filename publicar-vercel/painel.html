@@ -53,6 +53,17 @@
                 <p>Carregando a lista de médicos...</p>
                 <noscript>Ative o JavaScript e abra este arquivo por um servidor local do VS Code.</noscript>
             </div>
+
+            <details class="gerenciar">
+                <summary>Gerenciar nomes</summary>
+                <p class="ajuda-gerenciar">Adicione, corrija ou inative nomes. A inativação preserva o histórico.</p>
+                <form id="formCadastro" class="form-cadastro">
+                    <input id="nomeCadastro" type="text" maxlength="120" placeholder="Nome do novo médico" required>
+                    <button type="submit">Adicionar nome</button>
+                </form>
+                <label class="filtro-inativos"><input id="mostrarInativos" type="checkbox"> Mostrar inativos</label>
+                <div id="listaCadastro"></div>
+            </details>
         </section>
 
     </main>
@@ -60,7 +71,7 @@
     <div id="toast" role="status" aria-live="polite"></div>
 
     <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
-    <script type="module" src="./painel.js?v=9"></script>
+    <script type="module" src="./painel.js?v=10"></script>
 </body>
 
 </html>

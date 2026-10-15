@@ -1,0 +1,40 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Coleção usada pelo painel público. A autenticação anônima continua obrigatória.
+    match /hev_presenca_publica/{medico} {
+      allow read: if request.auth != null;
+
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly(['numero', 'nome', 'ativo', 'presente', 'horario'])
+        && request.resource.data.nome is string
+        && request.resource.data.nome.size() > 0
+        && request.resource.data.nome.size() <= 120
+        && request.resource.data.ativo == true
+        && request.resource.data.presente == false
+        && request.resource.data.horario == null;
+
+      allow update: if request.auth != null
+        && request.resource.data.keys().hasOnly(['numero', 'nome', 'ativo', 'presente', 'horario'])
+        && request.resource.data.nome is string
+        && request.resource.data.nome.size() > 0
+        && request.resource.data.nome.size() <= 120
+        && (!request.resource.data.keys().hasAny(['numero'])
+          || !resource.data.keys().hasAny(['numero'])
+          || request.resource.data.numero == resource.data.numero);
+
+      // O painel apenas inativa. O histórico não é apagado.
+      allow delete: if false;
+    }
+
+    // Dados administrativos e CRM nunca ficam disponíveis no painel público.
+    match /hev_medicos/{medico} {
+      allow read, write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

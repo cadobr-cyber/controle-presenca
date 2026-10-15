@@ -176,6 +176,79 @@ header {
   color: #18723a;
 }
 
+.gerenciar {
+  margin-top: 28px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 18px;
+}
+
+.gerenciar summary {
+  color: #4f3aaf;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.ajuda-gerenciar {
+  color: #64748b;
+  font-size: 13px;
+  margin: 14px 0;
+}
+
+.form-cadastro {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.form-cadastro input {
+  flex: 1;
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+.form-cadastro button,
+.acoes-cadastro button {
+  background: #4f3aaf;
+  color: white;
+  border: 0;
+  border-radius: 7px;
+  padding: 9px 11px;
+  cursor: pointer;
+}
+
+.filtro-inativos {
+  color: #64748b;
+  display: block;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.cadastro-item {
+  align-items: center;
+  border-bottom: 1px solid #edf2f7;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.cadastro-item.inativo {
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+.acoes-cadastro {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.acoes-cadastro .btn-inativar { background: #b42318; }
+.acoes-cadastro .btn-reativar { background: #18723a; }
+
 @media (max-width: 480px) {
   .cabecalho h1 {
     font-size: 22px;
@@ -196,6 +269,13 @@ header {
   .btn-presenca {
     font-size: 12px;
     padding: 10px;
+  }
+
+  .form-cadastro { flex-direction: column; }
+
+  .cadastro-item {
+    align-items: flex-start;
+    flex-direction: column;
   }
  
 }
