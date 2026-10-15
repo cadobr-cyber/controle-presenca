@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #eaf1f9, #d9e6f5);
+  min-height: 100vh;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 430px;
+  background: white;
+  padding: 40px 30px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.09);
+}
+
+.icone {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 22px;
+  background: #e8f0fa;
+  color: #18569b;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 35px;
+}
+
+.hospital {
+  color: #18569b;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+h1 {
+  color: #182b49;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+form {
+  text-align: left;
+}
+
+label {
+  display: block;
+  color: #334155;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 9px;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #18569b;
+}
+
+button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 15px;
+  border: none;
+  border-radius: 9px;
+  background: #18569b;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #123f73;
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+#mensagem {
+  margin-top: 14px;
+  color: #b42318;
+  text-align: center;
+  font-size: 13px;
+}
+
+footer {
+  margin-top: 30px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+}

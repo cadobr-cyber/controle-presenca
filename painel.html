@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HEV | Controle de Presença</title>
+    <link rel="stylesheet" href="./painel.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="cabecalho">
+            <img class="logo-hospital" src="./assets/logo-hospital-transparente.png" alt="Hospital Edmundo Vasconcelos">
+            <h1>Controle de Presença</h1>
+            <span>Dia dos Médicos 2026</span>
+            <small id="statusSync">Conectando...</small>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="resumo">
+            <div class="card">
+                <h2 id="total">0</h2>
+                <p>Total</p>
+            </div>
+
+            <div class="card">
+                <h2 id="presentes">0</h2>
+                <p>Presentes</p>
+            </div>
+
+            <div class="card">
+                <h2 id="ausentes">0</h2>
+                <p>Ausentes</p>
+            </div>
+        </section>
+
+        <section class="lista">
+            <h2>Lista de Médicos</h2>
+
+            <input type="search" id="pesquisa" placeholder="Pesquisar médico pelo nome...">
+
+            <div class="acoes-exportacao">
+                <button type="button" id="exportarExcel">Baixar Excel</button>
+                <button type="button" id="gerarPdf">Gerar PDF</button>
+            </div>
+
+            <div id="listaMedicos">
+                <p>Carregando a lista de médicos...</p>
+                <noscript>Ative o JavaScript e abra este arquivo por um servidor local do VS Code.</noscript>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+    <script type="module" src="./painel.js?v=9"></script>
+</body>
+
+</html>
