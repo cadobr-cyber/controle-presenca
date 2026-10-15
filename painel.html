@@ -49,11 +49,6 @@
                 <button type="button" id="gerarPdf">Gerar PDF</button>
             </div>
 
-            <div id="listaMedicos">
-                <p>Carregando a lista de médicos...</p>
-                <noscript>Ative o JavaScript e abra este arquivo por um servidor local do VS Code.</noscript>
-            </div>
-
             <details class="gerenciar">
                 <summary>Gerenciar nomes</summary>
                 <p class="ajuda-gerenciar">Adicione, corrija ou inative nomes. A inativação preserva o histórico.</p>
@@ -64,6 +59,11 @@
                 <label class="filtro-inativos"><input id="mostrarInativos" type="checkbox"> Mostrar inativos</label>
                 <div id="listaCadastro"></div>
             </details>
+
+            <div id="listaMedicos">
+                <p>Carregando a lista de médicos...</p>
+                <noscript>Ative o JavaScript e abra este arquivo por um servidor local do VS Code.</noscript>
+            </div>
         </section>
 
     </main>
@@ -71,7 +71,7 @@
     <div id="toast" role="status" aria-live="polite"></div>
 
     <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
-    <script type="module" src="./painel.js?v=10"></script>
+    <script type="module" src="./painel.js?v=11"></script>
 </body>
 
 </html>
